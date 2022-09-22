@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from transformers import AutoModelForQuestionAnswering, AutoTokenizer
+from transformers import AutoTokenizer
 from optimum.onnxruntime import ORTModelForQuestionAnswering
 
 import os
