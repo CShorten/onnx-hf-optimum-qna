@@ -23,7 +23,7 @@ brew install pkg-config
 
 Run command: 
 ```
-MODEL_NAME=bert-large-uncased-whole-word-masking-finetuned-squad ./download.py
+MODEL_NAME=optimum/roberta-base-squad2 TOKENIZER_NAME=deepset/roberta-base-squad2 ./download.py
 ```
 
 ### Running local server
