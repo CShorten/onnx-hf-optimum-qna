@@ -1,4 +1,5 @@
-from transformers import AutoModelForQuestionAnswering, AutoTokenizer
+from transformers import AutoTokenizer
+from optimum.onnxruntime import ORTModelForQuestionAnswering
 from transformers.tokenization_utils_base import BatchEncoding
 from pydantic import BaseModel
 from typing import Optional
@@ -10,7 +11,7 @@ class AnswersInput(BaseModel):
     question: str
 
 class Qna:
-    model: AutoModelForQuestionAnswering
+    model: ORTModelForQuestionAnswering
     tokenizer: AutoTokenizer
     cuda: bool
     cuda_core: str
@@ -18,7 +19,7 @@ class Qna:
     def __init__(self, model_path: str, cuda_support: bool, cuda_core: str):
         self.cuda = cuda_support
         self.cuda_core = cuda_core
-        self.model = AutoModelForQuestionAnswering.from_pretrained(model_path)
+        self.model = ORTModelForQuestionAnswering.from_pretrained(model_path)
         if self.cuda:
             self.model.to(self.cuda_core)
         self.model.eval() # make sure we're in inference mode, not training
