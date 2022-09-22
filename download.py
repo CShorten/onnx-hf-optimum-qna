@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer
+from optimum.onnxruntime import ORTModelForQuestionAnswering
+
 import os
 import sys
 
@@ -11,7 +13,7 @@ if model_name is None or model_name == "":
 
 print("Downloading model {} from huggingface model hub".format(model_name))
 
-model = AutoModelForQuestionAnswering.from_pretrained(model_name)
+model = ORTModelForQuestionAnswering.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 model.save_pretrained('./models/model')
