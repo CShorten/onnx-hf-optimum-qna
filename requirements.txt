@@ -1,6 +1,6 @@
 tokenizers
 transformers
-fastapi
+fastapi==0.78.0
 uvicorn
 nltk
 torch
@@ -9,3 +9,4 @@ protobuf
 optimum
 onnxruntime
 onnx
+tensorflow==2.8.2
