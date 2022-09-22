@@ -8,7 +8,7 @@ Documentation for this module can be found [here](https://weaviate.io/developers
 ## Build Docker container
 
 ```
-LOCAL_REPO="qna-transformers" MODEL_NAME="bert-large-uncased-whole-word-masking-finetuned-squad" ./cicd/build.sh
+LOCAL_REPO="qna-transformers" MODEL_NAME="optimum/roberta-base-squad2" TOKENIZER_NAME="deepset/roberta-base-squad2" ./cicd/build.sh
 ```
 
 ### Local development
