@@ -10,6 +10,7 @@ COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 
 ARG MODEL_NAME
+ARG TOKENIZER_NAME
 COPY download.py .
 RUN ./download.py
 
