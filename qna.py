@@ -22,7 +22,7 @@ class Qna:
         self.model = ORTModelForQuestionAnswering.from_pretrained(model_path)
         if self.cuda:
             self.model.to(self.cuda_core)
-        self.model.eval() # make sure we're in inference mode, not training
+        #self.model.eval() # make sure we're in inference mode, not training
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
 
